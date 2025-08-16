@@ -1,0 +1,35 @@
+pipeline {
+agent any
+stages {
+stage ('Clean') {
+steps {
+  echo 'Clean project Successfully' 
+  bat "mvn clean"
+}
+}
+stage ('Validate') {
+steps {
+  echo 'Validate project Successfully' 
+  bat "mvn validate"
+}
+}
+stage ('Compile') {
+steps {
+  echo 'Compile project Successfully'
+  bat "mvn compile"
+}
+}
+stage ('Test') {
+steps {
+  echo 'Test project Successfully'
+  bat "mvn Test"
+}
+}
+stage ('Release') {
+steps {
+  echo 'Release project Successfully'
+}
+}
+}
+
+}
