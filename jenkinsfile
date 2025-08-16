@@ -1,31 +1,30 @@
 pipeline {
 agent any
+ environment {
+        PATH = "C:/Windows/System32;"
+    }
 stages {
 stage ('Clean') {
 steps {
   echo 'Clean project Successfully' 
-  env.PATH='C:/Windows/System32'
   bat "mvn clean"
 }
 }
 stage ('Validate') {
 steps {
   echo 'Validate project Successfully' 
-   env.PATH='C:/Windows/System32'
   bat "mvn validate"
 }
 }
 stage ('Compile') {
 steps {
   echo 'Compile project Successfully'
-   env.PATH='C:/Windows/System32'
   bat "mvn compile"
 }
 }
 stage ('Test') {
 steps {
   echo 'Test project Successfully'
-  env.PATH='C:/Windows/System32'
   bat "mvn Test"
 }
 }
