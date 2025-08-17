@@ -28,13 +28,12 @@ steps {
 stage ('Test') {
 steps {
   echo 'Test project Successfully'
-  bat "mvn Test"
+  bat "mvn test"
 }
 }
 stage ('Release') {
 steps {
   echo 'Release project Successfully'
-exit 0
 }
 }
 }
